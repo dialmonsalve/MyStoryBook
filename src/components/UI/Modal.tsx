@@ -2,24 +2,37 @@
 import { useState } from 'react';
 import { Button } from '../Input/Button';
 import '../../sass/components/modal.scss';
-import '../../sass/components/modalHide.scss'
+import '../../sass/components/modalHide.scss';
 
 type Hide =
   | 'fadeout' | 'toUp' | 'toDown' | 'toRight' | 'toLeft'
   | 'jumpToLeft' | 'jumpToUp'
 
 interface Props {
-  type?: 'success' | 'danger' | 'warning' | 'info'
+  /**
+    * What is the content message? 
+    */
+  content?: string;
+  /**
+    * What kind of effect to use? 
+    */
+  hide?: Hide;
+    /**
+    * What is the title of the message? 
+    */
   title?: string;
-  content?: string
-  hide?: Hide
+  /**
+    * Message type in the modal
+    */
+  type?: 'success' | 'danger' | 'warning' | 'info';
 }
 
 export const Modal = ({
-  type = 'success',
-  title = 'success',
   content = 'Are you sure?',
-  hide = 'fadeout'
+  hide = 'fadeout',
+  title = 'success',
+  type = 'success',
+  ...props
 }: Props) => {
 
   const [hideModal, setHideModal] = useState(false);
@@ -28,17 +41,17 @@ export const Modal = ({
 
     switch (hide) {
       case 'toUp':
-        return 'toUp'
+        return 'toUp';
       case 'toDown':
-        return 'toDown'
+        return 'toDown';
       case 'toLeft':
-        return 'toLeft'
+        return 'toLeft';
       case 'toRight':
-        return 'toRight'
+        return 'toRight';
       case 'jumpToUp':
-        return 'jumpToUp'
+        return 'jumpToUp';
       case 'jumpToLeft':
-        return 'jumpToLeft'
+        return 'jumpToLeft';
 
       default:
         return 'fadeout';
@@ -49,23 +62,19 @@ export const Modal = ({
 
     switch (type) {
       case 'danger':
-        return '#ff0000'
+        return '#ff0000';
       case 'info':
-        return '#022BFF'
+        return '#022BFF';
       case 'warning':
-        return '#ffd900'
+        return '#ffd900';
       default:
-        return '#37ff00'
+        return '#37ff00';
     }
   }
 
   const onHideModal = () => {
-    setHideModal(true)
+    setHideModal(true);
   };
-
-  const onsHowModal = ()=>{
-    setHideModal(false)
-  }
 
   const handleContentClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.stopPropagation(); // Stop event propagation
@@ -73,13 +82,10 @@ export const Modal = ({
 
   return (
     <>
-    <Button
-      label='Show'
-      onClick={onsHowModal}
-    />
       <div
         className={`modal ${hideModal ? `modal-hide-${sideHide()}` : ''}`}
         onClick={onHideModal}
+        {...props}
       >
         <div className='modal-content' onClick={handleContentClick} >
 

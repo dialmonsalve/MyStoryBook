@@ -22,8 +22,7 @@ export const Black: Story = {
     color: 'black',
     size: 2,
     style: 'solid',
-    width: 250,
-    
+    width: 250,    
   }
 }
 

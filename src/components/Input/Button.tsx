@@ -3,55 +3,57 @@ import '../../sass/components/button.scss';
 
 interface ButtonProps {
   /**
-   * Is this the principal call to action on the page?
-   */
+    * What background color to use?
+    */
+  backgroundColor?: 'blue' | 'red' | 'green';
+  /**
+    * If the property is false, the button element will be transparent
+    */
   hasBackground?: boolean;
   /**
     * Does It use a animation?
-   */
+    */
   isAnimated?: boolean;
   /**
-   * What background color to use
-   */
-  backgroundColor?: 'blue' | 'red' | 'green';
-  /**
-   * How large should the button be?
-   */
-  size?: 'small' | 'medium' | 'large';
-
-  type?: 'button' | 'submit'
-  /**
-   * Button contents
-   */
+    * Label button contents
+    */
   label: string;
   /**
-   * Optional click handler
-   */
-
-  onClick?: () => void;
-
+    * Apply margin to button
+    */
   margin?: string
-
-  width?: number
+  /**
+    * How large should the button be?
+    */
+  size?: 'small' | 'medium' | 'large';
+  /**
+    * Button could be submit
+    */
+  type?: 'button' | 'submit';
+  /**
+    * Width to the button 
+    */
+  width?: number;
+  /**
+    * Optional click handler
+    */
+  onClick?: () => void;
 }
 
-/**
- * Primary UI component for user interaction
- */
 export const Button = ({
-  size = 'medium',
-  label,
-  isAnimated = false,
-  hasBackground = true,
   backgroundColor = 'blue',
-  type = 'button',
+  hasBackground = true,
+  isAnimated = false,
+  label,
   margin = '0px',
+  size = 'medium',
+  type = 'button',
   width,
   ...props
 }: ButtonProps) => {
 
-  const bg = `btn--${hasBackground ? backgroundColor : `outlined-${backgroundColor}`}`
-  const animated = isAnimated ? 'btn--animated' : ''
+  const bg = `btn--${hasBackground ? backgroundColor : `outlined-${backgroundColor}`}`;
+  const animated = isAnimated ? 'btn--animated' : '';
 
   return (
     <button

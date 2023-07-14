@@ -18,14 +18,14 @@ type Story = StoryObj<typeof meta>
 export const Black: Story = {
   args: {
     columns: 1,
-    deg: 135,
+    degree: 135,
     width:40
   }
 }
 export const Purple: Story = {
   args: {
     columns: 2,
-    deg: 90,
+    degree: 90,
     initialBg: '#d32bd6',
     middleBg: '#592f66',
     finalBg: '#590042',

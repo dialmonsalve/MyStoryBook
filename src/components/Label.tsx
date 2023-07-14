@@ -2,41 +2,51 @@
 import '../sass/components/label.scss';
 
 interface Props {
-  margin?:string
-  display?: 'inline' | 'inline-block' | 'block' | 'flex'
-  alignItems?: 'flex-start' | 'center' | 'flex-end'
+  /**
+    * How should the items be lined up?
+    */
+  alignItems?: 'flex-start' | 'center' | 'flex-end';
+  /**
+    * How must be the container?
+    */
+  display?: 'inline' | 'inline-block' | 'block' | 'flex';
+  /**
+    * It chose a color font
+    */
+  fontColor?: string;
+  /**
+    * Width to the button 
+    */
+  margin?: string;
   /**
     * This is the message to show
-  */
-  label?: string
+    */
+  label?: string;
   /**
     * This is the size tag
-  */
+    */
   size?: 'normal' | 'h1' | 'h2' | 'h3' | 'paragraph';
   /**
     * Does It want uppercase or normal font?
-  */
-  uppercase?: boolean
-
-  /**
-    * It chose a color font
-  */
-  fontColor?: string
+    */
+  uppercase?: boolean;
 }
 
 export const Label = ({
   alignItems,
-  display='flex',
-  uppercase = false,
+  display = 'flex',
+  fontColor = '#000000',
   label = 'no label',
   size = 'normal',
-  fontColor = '#000000',
+  uppercase = false,
+  ...props
 }: Props) => {
 
   return (
     <span
       className={`label ${size}`}
-      style={{ color: fontColor, display,  alignItems }}
+      style={{ color: fontColor, display, alignItems }}
+      {...props}
     >
       {uppercase ? label.toUpperCase() : label}
     </span>

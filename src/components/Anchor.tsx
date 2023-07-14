@@ -3,41 +3,64 @@ import '../sass/components/anchor.scss';
 
 interface ButtonProps {
   /**
-   * It determine the routes
-   */
-  href: string;
-  /**
-   * If the property is false, the element will be transparent
-   */
-  hasBackground?: boolean;
-  /**
-   * What background color to use
-   */
+    * What background color to use
+    */
   backgroundColor?: string;
   /**
-   * How large should the Link be?
-   */
-  size?: 'small' | 'medium' | 'large';
+    * Apply a border radius to the Link
+    */
+  borderRadius?: string;
   /**
-   * This is the content 
-   */
+    * Apply font color to link  
+    */
+  color?: string;
+  /**
+    * If the property is false, the element will be transparent
+    */
+  hasBackground?: boolean;
+  /**
+    * It determine the routes
+    */
+  href: string;
+  /**
+    * This is the content 
+    */
   label: string;
   /**
-   * Align the text
-   */
-  textAlign?: | 'center' | 'justify' | 'left' | 'right' | 'start' | 'end'
-  // justifyContent?: 'center' | 'flex-start' | 'flex-end'
-  padding?: string
-  margin?: string
-  marginLeft?: string
-  marginTop?: string
-  marginRight?: string
-  marginBottom?: string
-  borderRadius?: string
-  color?: string
+    * Apply margin to Link
+    */
+  margin?: string;
   /**
-   * Optional click handler
-   */
+    * Apply margin to bottom to the Link
+    */
+  marginBottom?: string;
+  /**
+    * Apply margin to left to the Link
+    */
+  marginLeft?: string;
+  /**
+    * Apply margin to right to the Link
+    */
+  marginRight?: string;
+  /**
+    * Apply margin to top to the Link
+    */
+  marginTop?: string;
+  /**
+    * Apply padding to Link
+    */
+  padding?: string;
+  /**
+    * How large should the Link be?
+    */
+  size?: 'small' | 'medium' | 'large';
+  /**
+    * Align the text
+    */
+  textAlign?: | 'center' | 'justify' | 'left' | 'right' | 'start' | 'end';
+  /**
+    * Optional click handler
+    */
   onClick?: () => void;
 }
 
@@ -47,7 +70,6 @@ export const Anchor = ({
   color = 'black',
   hasBackground = true,
   href,
-  // justifyContent = 'flex-start',
   label,
   margin = '0',
   marginBottom = '0',
@@ -60,11 +82,11 @@ export const Anchor = ({
   ...props
 }: ButtonProps) => {
 
-  const border = `${hasBackground ? 'none' : `1px solid ${color}`}`
+  const border = `${hasBackground ? 'none' : `1px solid ${color}`}`;
 
-  const bg = `${!hasBackground ? 'transparent' : backgroundColor}`
+  const bg = `${!hasBackground ? 'transparent' : backgroundColor}`;
+  
   return (
-
 
     <li className={`item item--active`}
       style={{
@@ -72,6 +94,7 @@ export const Anchor = ({
         marginBottom, marginTop, marginRight, borderRadius,
         border,
       }}
+      {...props}
     >
       <a
         className={`item__link item__link--${size}`}

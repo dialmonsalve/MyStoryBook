@@ -3,10 +3,19 @@ import '../../sass/components/sidebar.scss';
 import { ReactNode, useState } from 'react';
 
 interface Props {
-  backgroundColor?: string
+  /**
+    * What background color to use?
+    */
+  backgroundColor?: string;
+  /**
+    * How large should the sidebar be?
+    */
+  drawerWidth?: number;
+  /**
+    * To animate sidebar property must be true
+    */
+  isAnimated?: boolean;
   children?: ReactNode;
-  drawerWidth?: number
-  isAnimated?: boolean
 }
 
 export const Sidebar = ({
@@ -22,7 +31,7 @@ export const Sidebar = ({
   const animation = `${isAnimated ? 'animation-hide-sidebar' : 'hide-sidebar'}`;
 
   const onToggleSidebar = () => {
-    setToggleSidebar(!toggleSidebar)
+    setToggleSidebar(!toggleSidebar);
   }
 
   return (
@@ -45,7 +54,6 @@ export const Sidebar = ({
             padding='5px'
             borderRadius='1rem'
           />
-
 
           {children}
         </ul>
