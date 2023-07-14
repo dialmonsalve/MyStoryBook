@@ -1,0 +1,11 @@
+@use '../abstract/variables' as v;
+@use '../abstract/mixins' as m;
+
+.header{
+  display: flex;
+  position: fixed;
+  right: 2px;
+  box-shadow: 4px 4px 4px rgba($color: #000000, $alpha: 0.6);
+  z-index: -1;
+}
+

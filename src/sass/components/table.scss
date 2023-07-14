@@ -1,0 +1,30 @@
+.table {
+	width: 100%;
+	border: 1px solid #000;
+	border-spacing: 0;
+	color: gray;
+	cursor: pointer;
+	box-shadow: 4px 4px 3px rgba(0, 0, 0, 0.3);
+}
+
+th {
+	text-align: center;
+	border-collapse: collapse;
+	padding: .5rem;
+	color: white;
+	background-color: rgb(61, 54, 54);
+	text-transform: uppercase;
+}
+
+tr {
+	font-size: 1.3rem;
+	text-transform: uppercase;
+	transition: all .2s;
+	text-align: center;
+
+	&:hover {background-color:rgba(148, 148, 148, 0.502);}
+}
+
+td {
+	padding: 1rem;
+}

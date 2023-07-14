@@ -1,0 +1,87 @@
+@use '../abstract/mixins.scss' as m;
+
+.modal {
+  width: 100%;
+  background-color: rgba(8, 7, 7, 0.6);
+  height: 100%;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+  z-index: 2;
+  transform: translateY(0);
+}
+
+.modal-content {
+  position: relative;
+  background-color: rgb(46, 48, 53);
+  margin: 0 auto;
+  top: 20%;
+  width: 40%;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 4px 4px 3px rgba(0, 0, 0, 0.3);
+  border-radius: 1rem;
+  padding: 3rem;
+  outline: 1px solid rgb(13, 13, 14);
+  border: 3px solid rgb(13, 13, 14);
+
+  &__frame {
+    height: 80%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+
+
+    &--title {
+      text-align: center;
+      font-size: 4rem;
+      text-transform: uppercase;
+    }
+
+    &--message {
+      text-align: center;
+      font-size: 3rem;
+      text-transform: uppercase;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+}
+
+
+.danger {
+  @include m.typeModal(url('../../assets/danger.svg'));
+}
+
+.success {
+  @include m.typeModal(url('../../assets/success.svg'));
+}
+
+.warning {
+  @include m.typeModal(url('../../assets/warning.svg'));
+}
+
+.info {
+  @include m.typeModal(url('../../assets/info.svg'));
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(360deg);
+  }
+
+  100% {
+    transform: rotate(720deg);
+  }
+}

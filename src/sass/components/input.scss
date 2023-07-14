@@ -1,0 +1,13 @@
+@use '../abstract/mixins.scss' as m;
+@use '../base/base.scss';
+
+.control {
+
+  &,
+  &:link,
+  &:visited {
+    @include m.input();
+  }
+}
+
+@include m.sizes();

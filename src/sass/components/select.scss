@@ -1,0 +1,21 @@
+@use '../abstract/variables' as v;
+@use '../abstract/mixins.scss' as m;
+@use '../base/base.scss';
+
+.select {
+
+  &,
+  &:link,
+  &:visited {
+    letter-spacing: 2px;
+    line-height: 1;
+
+    @include m.input();
+  }
+
+  &:focus {
+    outline: 2px solid #6aff00; /* Cambia el estilo del foco al seleccionar el elemento */
+  }
+}
+
+@include m.sizes();

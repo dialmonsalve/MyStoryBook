@@ -1,0 +1,101 @@
+@use '../abstract/mixins' as m;
+@use '../abstract/variables' as v;
+
+.normal-device {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.tab-port {
+  @include m.respond(tab-port) {
+    // flex-direction: column;
+    justify-content: flex-start;
+  }
+
+}
+
+.phone {
+  @include m.respond(phone) {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+}
+
+.nav {
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.563);
+  border-radius: 1rem;
+
+  &__w-4 {
+    width: 100vw;
+  }
+
+  &__w-3 {
+    width: 75vw;
+  }
+
+  &__w-2 {
+    width: 50vw;
+  }
+
+  &__w-1 {
+    width: 25vw;
+  }
+
+  @include m.respond(phone) {
+
+    height: 95vh;
+
+    &__w-4 {
+      width: 60vw;
+    }
+
+    &__w-3 {
+      width: 45vw;
+    }
+
+    &__w-2 {
+      width: 30vw;
+    }
+
+    &__w-1 {
+      width: 15vw;
+    }
+
+  }
+
+
+  &--blue {
+    @include m.btnColor(v.$color-blue, false);
+  }
+
+  &--green {
+    @include m.btnColor(v.$color-green, false);
+  }
+
+  &--red {
+    @include m.btnColor(v.$color-red, false);
+  }
+
+  &--outlined-blue {
+    @include m.outlined(v.$color-blue, false);
+  }
+
+  &--outlined-green {
+    @include m.outlined(v.$color-green, false);
+  }
+
+  &--outlined-red {
+    @include m.outlined(v.$color-red, false);
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+    padding: 1.5rem 0;
+
+    @include m.respond(phone) {
+      flex-direction: column;
+    }
+  }
+}
