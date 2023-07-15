@@ -12,21 +12,21 @@ interface Props {
     */
   columns?: number;
   /**
-    * Background has a gradient, this property sets its degree
+    * If background has a gradient, this property sets its degree
     */
   degree?: number;
   /**
-    * Background has a gradient, this property sets its initial color
+    * If background has a gradient, this property sets its final color
+    */
+  finalBg?: string;
+  /**
+    * If background has a gradient, this property sets its initial color
     */
   initialBg?: string;
   /**
-    * Background has a gradient, this property sets its color to 50%
+    * If background has a gradient, this property sets its color to 50%
     */
   middleBg?: string;
-  /**
-    * Background has a gradient, this property sets its final color
-    */
-  finalBg?: string;
   /**
     * Title for the form
     */

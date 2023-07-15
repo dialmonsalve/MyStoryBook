@@ -1,4 +1,3 @@
-import { Anchor } from '../Anchor';
 import '../../sass/components/sidebar.scss';
 import { ReactNode, useState } from 'react';
 
@@ -40,21 +39,6 @@ export const Sidebar = ({
         style={{ backgroundColor, width: `${drawerWidth}px` }}
       >
         <ul className='sidebar__container'>
-          <Anchor
-            href=''
-            label='Hola'
-            color='white'
-            padding='5px'
-            borderRadius='1rem'
-          />
-          <Anchor
-            href=''
-            label='Hola'
-            color='white'
-            padding='5px'
-            borderRadius='1rem'
-          />
-
           {children}
         </ul>
         <div

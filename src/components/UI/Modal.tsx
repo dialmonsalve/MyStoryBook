@@ -102,7 +102,6 @@ export const Modal = ({
             <Button
               label='ok'
               backgroundColor='green'
-              isAnimated
               onClick={onHideModal}
             />
           </div>
