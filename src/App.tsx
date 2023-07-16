@@ -5,6 +5,7 @@ import { Header } from './components/UI/Header';
 
 import { Sidebar } from './components/UI/Sidebar'
 import { Card } from './components/Card/Card';
+import { BoxFlex } from './components/UI/BoxFlex';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         drawerWidth={drawerWidth}
         space={5}
       /> */}
+      <BoxFlex>
       <Card
         hasGradient
         initialBg='#131212'
@@ -33,6 +35,8 @@ function App() {
       >
 
       </Card>
+      </BoxFlex>
+
 
     </div>
   )

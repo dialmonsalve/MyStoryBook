@@ -6,11 +6,11 @@
   flex-direction: column;
   outline: 3px solid transparent;
   transition: transform .2s ease-in;
-  color:white;
 
   &:hover {
     transform: scale(1.01);
     cursor: pointer;
+    outline: 3px solid rgb(119, 121, 119);
   }
 
   &__head {

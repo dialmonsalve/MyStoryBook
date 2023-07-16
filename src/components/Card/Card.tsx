@@ -13,6 +13,10 @@ interface Props {
     */
   background?: string;
   /**
+    * Font Color
+    */
+  color?: string
+  /**
     * If background has a gradient, this property sets its degree
     */
   degrees?: number;
@@ -53,18 +57,21 @@ interface Props {
 
 export const Card = ({
   background = '#000000',
+  color = 'white',
   degrees = 135,
   finalBg = '#ffffff',
   hasGradient = true,
   height = 35,
   hover = 'rgba(0,0,0,.8)',
   initialBg = ' #7a7777',
-  margin = '0 auto',
+  margin,
   width = 30,
   middleBg = ' #d4c6c6',
   children,
   ...props
 }: Props) => {
+  const isMobile = window.innerWidth < 600;
+  const widthForm = isMobile ? 27 : width;
 
   const backgroundColor = (degrees: number) => {
     if (hasGradient) {
@@ -95,10 +102,11 @@ export const Card = ({
     <div
       className='card'
       style={{
-        width: `${width}rem`,
-        height: `${height}rem`,
         background: backgroundColor(degrees),
-        margin
+        color,
+        height: `${height}rem`,
+        margin,
+        width: `${widthForm}rem`,
       }}
       onMouseEnter={handleFocus}
       onMouseLeave={handleBlur}
@@ -116,7 +124,7 @@ export const Card = ({
         <div className='card__media--controls' ></div>
       </CardMedia>
 
-      <CardContent>
+      <CardContent color='white' >
         <h1>Hola</h1>
         <p>Esto es una prueba</p>
         <p>Esto es una prueba</p>

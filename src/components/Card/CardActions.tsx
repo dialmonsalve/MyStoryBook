@@ -7,12 +7,14 @@ type Content =
 
 interface Props {
   alignItems?: 'center' | 'flex-start' | 'flex-end' | 'stretch' | 'baseline';
+  color?: string,
   justifyContent?: Content;
   children?: ReactNode | ReactNode[]
 }
 
 export const CardActions = ({
   alignItems = 'center',
+  color='white',
   justifyContent = 'space-between',
   children,
   ...props }: Props) => {
@@ -20,7 +22,7 @@ export const CardActions = ({
   return (
     <div
       className='card__actions'
-      style={{ alignItems, justifyContent }}
+      style={{ alignItems, justifyContent, color }}
       {...props}
     >
       {children}

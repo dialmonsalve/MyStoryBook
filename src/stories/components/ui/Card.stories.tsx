@@ -26,6 +26,7 @@ export const Gradient: Story = {
     middleBg: '#414b34',
     degrees: 120,
     height:45,
+    color:'red'
   }
 }
 export const Black: Story = {
