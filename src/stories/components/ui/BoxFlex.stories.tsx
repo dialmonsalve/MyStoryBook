@@ -37,9 +37,6 @@ export default meta;
 
 export const Center: Story = {
   args: {
-    alignContent: 'center',
-    flexDirection: 'row',
-    justifyContent: 'end',
-    // children: <Card/>
+
   }
 }

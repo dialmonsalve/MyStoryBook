@@ -1,6 +1,5 @@
 import { ReactNode } from 'react';
 import '../../sass/components/box.scss';
-import { Card } from '../Card/Card';
 
 type AlignContent =
   'flex-start' | 'flex-end' | 'center' | 'space-between' | 'space-around' | 'space-evenly' | 'stretch' | 'start' | 'end' | 'baseline' | 'first baseline' | 'last baseline' | 'unsafe';
@@ -24,35 +23,43 @@ interface Props {
   /**
     * Space among components 
     */
-  space?: number;
+  gap?: number;
+  padding?: number;
+  margin?: string
+  overflowY?: 'auto' | 'scroll' | 'hidden'
+  height?: string
   children?: ReactNode | ReactNode[];
 }
 
 export const BoxFlex = ({
   alignContent = 'flex-start',
-  flexDirection = 'row',
+  flexDirection,
   justifyContent = 'flex-start',
-  space = 20,
+  gap = 20,
+  padding,
+  margin = '2rem 0',
+  overflowY = 'auto',
+  height,
   children,
 }: Props) => {
 
   const isMobile = window.innerWidth < 600;
-  const selectedDirection = isMobile ? 'column' : flexDirection;
   const selectedContent = isMobile ? 'center' : alignContent;
+
 
   return (
     <div className="box-flex"
       style={{
-        flexDirection: selectedDirection,
-        gap: space,
-        padding: space,
         alignContent: selectedContent,
-        justifyContent
+        flexDirection,
+        gap,
+        justifyContent,
+        margin,
+        padding,
+        overflowY,
+        height,
       }}
     >
-      <Card />
-      <Card />
-      <Card />
       {children}
     </div>
   )

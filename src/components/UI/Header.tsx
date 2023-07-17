@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 import '../../sass/components/header.scss';
+import { Anchor } from '../Anchor';
 
 type Content =
   'center' | 'flex-end' | 'flex-start' |
@@ -46,8 +47,7 @@ export const Header = ({
   backgroundColor = 'white',
   borderRadius = '1rem',
   drawerWidth = 240,
-  flexWrap = 'nowrap',
-  justifyContent = 'flex-start',
+  justifyContent = 'flex-end',
   padding = '2rem',
   space = 1,
   children,
@@ -62,10 +62,19 @@ export const Header = ({
     <header
       className='header'
       style={{
-        backgroundColor, width: `calc(${finalSpace}% - ${drawerWidth}px)`, justifyContent, flexWrap, alignContent, padding, borderRadius
-      }}
-      {...props}
+        backgroundColor, width: `calc(${finalSpace}% - ${drawerWidth}px)`, justifyContent, alignContent, padding, borderRadius
+      }}      {...props}
     >
+      <Anchor
+        href=''
+        label='Hola'
+        borderRadius='1rem'
+      />
+      <Anchor
+        href=''
+        label='Hola'
+        borderRadius='1rem'
+      />
       {children}
     </header>
   )
