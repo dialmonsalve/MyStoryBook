@@ -6,6 +6,7 @@ import { Header } from './components/UI/Header';
 import { Sidebar } from './components/UI/Sidebar'
 import { Card } from './components/Card/Card';
 import { BoxFlex } from './components/UI/BoxFlex';
+import { Spinner } from './components/animations/Spinner';
 
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
 
       </Card>
       </BoxFlex>
+      <Spinner/>
 
 
     </div>

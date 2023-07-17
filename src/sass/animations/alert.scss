@@ -1,0 +1,200 @@
+@use '../abstract/variables.scss' as v;
+
+.container-alert {
+  display: inline-block;
+  background-color: red;
+  padding: 1rem 1rem;
+  border-radius: 1rem;
+  position: absolute;
+  transition: all .1s ease-in-out;
+  right: 2%;
+  color: white;
+  box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.3);
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  font-weight: 900;
+  animation: stayVisible 0.5s ease-out 1s;
+}
+
+.success {
+  background-color: v.$success;
+}
+
+.info {
+  background-color: v.$info;
+}
+
+.warning {
+  background-color: v.$warning;
+}
+
+.danger {
+  background-color: v.$danger;
+}
+
+
+.toUp {
+  animation: toastToUp 0.3s ease-out, stayVisible 0.5s ease-out 1s;
+  animation-fill-mode: both;
+}
+
+.toRight {
+  animation: toastToRight 0.3s ease-out, stayVisible 0.5s ease-out 1s;
+  animation-fill-mode: both;
+}
+
+.toDown {
+  animation: toastToDown 0.3s ease-out, stayVisible 0.5s ease-out 1s;
+  animation-fill-mode: both;
+}
+
+.toLeft {
+  animation: toastToLeft 0.3s ease-out, stayVisible 0.5s ease-out 1s;
+  animation-fill-mode: both;
+}
+
+.toFade {
+  animation: stayVisible 0.3s ease-out 1s;
+  animation-fill-mode: forwards;
+}
+
+.jumpToUp {
+  animation: jumpToUp 0.3s ease-out, stayVisible 0.5s ease-out 1s;
+  animation-fill-mode: forwards;
+}
+
+.jumpToRight {
+  animation: jumpToRight 0.3s ease-out, stayVisible 0.5s ease-out 1s;
+  animation-fill-mode: forwards;
+}
+
+.jumpToDown {
+  animation: jumpToDown 0.3s ease-out, stayVisible 0.5s ease-out 1s;
+  animation-fill-mode: forwards;
+}
+
+.jumpToLeft {
+  animation: jumpToLeft 0.3s ease-out, stayVisible 0.5s ease-out 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes toastToUp {
+  0% {
+    opacity: 0;
+    transform: translateY(9rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes toastToRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-9rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0rem);
+  }
+}
+
+@keyframes toastToDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes toastToLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(2.5rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(-1rem);
+  }
+}
+
+@keyframes toFade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes jumpToUp {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes jumpToRight {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateX(50px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes jumpToDown {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes jumpToLeft {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-7rem);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes stayVisible {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50%,
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

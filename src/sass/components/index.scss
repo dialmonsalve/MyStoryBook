@@ -1,6 +1,7 @@
-@use '../abstract/mixins.scss';
-@use '../abstract/variables.scss';
-@use '../base/base.scss';
+@use '../animations/spinner.scss';
+@use '../abstract/mixins';
+@use '../abstract/variables';
+@use '../base/base';
 @use 'anchor';
 @use 'box';
 @use 'button';
